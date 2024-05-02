@@ -1,17 +1,16 @@
-\documentclass{beamer}
+\documentclass[aspectratio=169,pdflatex,compress]{beamer}
 
-% Theme customization
-\usetheme{default}
-
-% Packages and additional settings
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{graphicx}
+% Include the preamble
+\input{src/UsersPackagesDefs.tex}
+% Include the template backgrounds
+\input{src/odlTemplate_title.tex}
 
 % Title slide information
 \title{Your Presentation Title}
-\author{Your Name}
-\institute{Your Institution}
+\subtitle{Your Presentation Subtitle}
+
+\author{\textbf{Author 1} \inst{1} \and co author \inst{1} \and co author \inst{1}}
+\institute{\inst{1}University of Washington, School of Oceanography}
 \date{\today}
 
 % Begin the document
@@ -22,18 +21,31 @@
     \titlepage
 \end{frame}
 
+\input{src/odlTemplate_main.tex}
+
 % Content slides
+\begin{frame}
+    \tableofcontents[currentsection]
+    \frametitle{Table of Contents}
+\end{frame}
+
+% Introduction slide
+
+\section{Introduction}
 \begin{frame}
     \frametitle{Introduction}
     This is the introduction slide.
 \end{frame}
 
+% Main content slide
+\section{Main Content}
 \begin{frame}
     \frametitle{Main Content}
     This is the main content slide.
 \end{frame}
 
 % Conclusion slide
+\section{Conclusion}
 \begin{frame}
     \frametitle{Conclusion}
     This is the conclusion slide.

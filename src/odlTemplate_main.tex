@@ -1,0 +1,41 @@
+  % Define background for other frames
+\setbeamertemplate{background}{
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[inner sep=0] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight]{resources/main_background.pdf}};
+    \end{tikzpicture}
+    
+    % put the slide number at the bottom left, in white
+    % first remove the default frame number
+    
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=south west, inner sep=0] at (current page.south west) {\textcolor{white}{\insertframenumber}};
+    \end{tikzpicture}
+  }
+
+\setbeamertemplate{footline}{}
+
+
+% Display sections in headline 
+
+% Set theme colors (example)
+\setbeamercolor{section in head/foot}{fg=red} % Customize section color
+\setbeamertemplate{section in head/foot shaded}{\color{gray}\usebeamertemplate{section in head/foot}}
+
+% Define headline template
+\setbeamertemplate{headline}{%
+  \ifnum\value{framenumber}>1 % Display section navigation from slide 2 onwards
+    \begin{beamercolorbox}[wd=\paperwidth,ht=3.5ex,dp=1.5ex]{section in head/foot}
+      \insertsectionnavigationhorizontal{\paperwidth}{}{} % Display section navigation
+    \end{beamercolorbox}%
+
+        % Add subtle gray line below sections
+        \begin{beamercolorbox}[wd=\paperwidth,ht=0.5ex,dp=0.5ex]{lower separation line head}
+          \color{gray}\rule{\paperwidth}{0.1ex}
+        \end{beamercolorbox}
+  \fi%
+}
+
+% Adjust frame title position (move down)
+\setbeamertemplate{frametitle}{%
+  \vskip4ex\insertframetitle
+}

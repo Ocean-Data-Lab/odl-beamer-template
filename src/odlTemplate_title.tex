@@ -1,0 +1,9 @@
+% Define title page background
+\setbeamertemplate{background}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[inner sep=0] at (current page.center) {\includegraphics[width=\paperwidth,height=\paperheight]{resources/title_background.pdf}};
+  \end{tikzpicture}
+
+  % remove page number
+    }
+\setbeamertemplate{footline}{}
